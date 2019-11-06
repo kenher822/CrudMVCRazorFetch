@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CrudMVCRazorFetch.Controllers
 {
-    public class PeaopleController : Controller
+    public class PeopleController : Controller
     {
         // GET: Peaople
         public ActionResult Index()
