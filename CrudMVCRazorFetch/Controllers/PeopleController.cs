@@ -96,7 +96,7 @@ namespace CrudMVCRazorFetch.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpPost]
         public ActionResult Delete(int Id)
         {
             try
@@ -105,7 +105,6 @@ namespace CrudMVCRazorFetch.Controllers
                 {
                     var oPeople = db.People.Find(Id);
                     db.People.Remove(oPeople);
-                    db.Entry(oPeople).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
 

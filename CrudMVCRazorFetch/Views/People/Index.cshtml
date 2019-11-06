@@ -29,7 +29,7 @@
         fetch("@Url.Content("~/People/Delete")", {
             method: "POST",
             body: JSON.stringify({
-                Id: document.getElementById("Id").value
+                Id: Id
             }),
             headers: {
                 'Accept': "application/json",
@@ -44,7 +44,7 @@
             if (Data != "1") {
                 alert(Data)
             } else {
-                document.location.href = "@Url.Content("~/People/")";
+                Get();
             }
         })
     }
