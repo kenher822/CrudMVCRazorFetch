@@ -5,7 +5,24 @@
 
 <h2>@ViewBag.Title</h2>
 
-<div id="divLista">
+<input type="button" name="refrescar" value="refrescar" onclick="Get()" />
+
+<div id="divLista" class="container">
 
 </div>
+
+<script>
+    urlGet = "@Url.Content("~/People/List")";
+    Get();
+    function Get() {
+        fetch(urlGet)
+            .then(function (response) {
+                return response.text();
+            })
+            .then((data) => {
+                document.getElementById("divLista").innerHTML = data;
+            })
+    }
+    
+</script>
 
