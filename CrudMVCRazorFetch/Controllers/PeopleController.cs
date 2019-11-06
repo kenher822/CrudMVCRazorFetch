@@ -95,6 +95,27 @@ namespace CrudMVCRazorFetch.Controllers
                 return Content(ex.Message);
             }
         }
+
+        [HttpDelete]
+        public ActionResult Delete(int Id)
+        {
+            try
+            {
+                using (CrudMVCRazorFetchEntities db = new CrudMVCRazorFetchEntities())
+                {
+                    var oPeople = db.People.Find(Id);
+                    db.People.Remove(oPeople);
+                    db.Entry(oPeople).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+
+                return Content("1");
+            }
+            catch (Exception ex)
+            {
+                return Content(ex.Message);
+            }
+        }
     }
 
 }
