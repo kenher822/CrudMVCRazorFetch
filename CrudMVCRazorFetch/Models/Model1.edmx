@@ -4,9 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CrudMVCRazorFetchModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'CrudMVCRazorFetch.dbo.People' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+    <Schema Namespace="CrudMVCRazorFetchModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="People">
           <Key>
             <PropertyRef Name="id" />
@@ -16,16 +14,9 @@ advertencia 6002: La tabla o vista 'CrudMVCRazorFetch.dbo.People' no tiene defin
           <Property Name="age" Type="int" />
         </EntityType>
         <EntityContainer Name="CrudMVCRazorFetchModelStoreContainer">
-          <EntitySet Name="People" EntityType="Self.People" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [People].[id] AS [id], 
-    [People].[name] AS [name], 
-    [People].[age] AS [age]
-    FROM [dbo].[People] AS [People]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="People" EntityType="Self.People" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CrudMVCRazorFetchModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

@@ -59,6 +59,42 @@ namespace CrudMVCRazorFetch.Controllers
             {
                 return Content(ex.Message);
             }
+
+        }
+        public ActionResult Edit(int Id)
+        {
+            PeopleViewModel model = new PeopleViewModel();
+            using (CrudMVCRazorFetchEntities db = new CrudMVCRazorFetchEntities())
+            {
+                var oPeople = db.People.Find(Id);
+                model.Name = oPeople.name;
+                model.Age = oPeople.age;
+                model.Id = oPeople.id;
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Update(PeopleViewModel model)
+        {
+            try
+            {
+                using (CrudMVCRazorFetchEntities db = new CrudMVCRazorFetchEntities())
+                {
+                    var oPeople = db.People.Find(model.Id);
+                    oPeople.name = model.Name;
+                    oPeople.age = model.Age;
+                    db.Entry(oPeople).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+
+                return Content("1");
+            }
+            catch (Exception ex)
+            {
+                return Content(ex.Message);
+            }
         }
     }
+
 }

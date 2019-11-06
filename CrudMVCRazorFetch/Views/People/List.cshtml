@@ -9,5 +9,8 @@
     <div>
         Nombre: @oPeople.Name<br />
         Edat: @oPeople.Age<br />
+        <input onclick="document.location.href='@Url.Content("~/People/Edit/"+oPeople.Id)'" type="button" value="Editar" />
+        <input onclick="jsDelete(@oPeople.Id)" type="button" value="Eliminar" />
     </div>
 }
+
