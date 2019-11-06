@@ -4,8 +4,8 @@
 }
 
 <h2>@ViewBag.Title</h2>
-
-<input type="button" name="refrescar" value="refrescar" onclick="Get()" />
+<input type="button" value="Nuevo" onclick="document.location.href='@Url.Content("~/People/New")'"/>
+<input type="button" value="Refrescar" onclick="Get()" />
 
 <div id="divLista" class="container">
 
@@ -23,6 +23,6 @@
                 document.getElementById("divLista").innerHTML = data;
             })
     }
-    
+
 </script>
 
