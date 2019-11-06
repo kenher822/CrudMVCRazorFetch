@@ -8,7 +8,7 @@ namespace CrudMVCRazorFetch.Models.ViewModel
 {
     public class PeopleViewModel
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         [DisplayName("Nombre")]
         public string Name { get; set; }
         [DisplayName("Edad")]

@@ -16,6 +16,7 @@ namespace CrudMVCRazorFetch.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult List()
         {
             List<ListPeopleViewModel> lst = new List<ListPeopleViewModel>();

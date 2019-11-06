@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e0a5a3fb57fb4214b5f58eb2b58189f1" Name="Diagram1">
-        <EntityTypeShape EntityType="CrudMVCRazorFetchModel.People" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrudMVCRazorFetchModel.People" Width="3.375" PointX="0.875" PointY="1.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
